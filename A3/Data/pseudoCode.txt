@@ -1,0 +1,55 @@
+https://www.latex4technics.com/?note=1a22
+
+\documentclass[varwidth]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage{algorithm2e}
+
+\begin{document}
+\begin{algorithm}[H]
+ \KwData{$I$,$D$,$W$}
+ \KwResult{J}
+ $\bar{I}$ := pad image $I$\;
+ \For{each pixel $p \in I$}{
+  $r$ := $f(p|D)$\;
+  $J(p)$ := $\sum\limits_{p' \in N(p|r)} \bar{I}(p')W(p'|r)$\;
+ }
+\end{algorithm}
+\end{document}
+
+
+\begin{document}
+\begin{algorithm}[H]
+ \KwData{$A$,$n$}
+ \KwResult{$e_n$}
+ $e_0$ := random value\;
+ $i$ := 0\; 
+ \While{ $i < n$}{
+  $e_{i+1}$ := $\frac{Ae_i}{||Ae_i||}$\;
+  $i$ := $i + 1$\;
+ }
+\end{algorithm}
+\end{document}
+
+\documentclass[varwidth]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage{algorithm2e}
+
+\begin{document}
+\begin{algorithm}[H]
+ \KwData{$G$, $y$, $n$}
+ \KwResult{$x_n$}
+ $x_0 = y$\;
+ $r_0$ := $y - Gx_0$\;
+ $p_0$ := $r_0$\;
+ $k$ := 0\; 
+ \While{ $k < n$}{
+  $c$ := $Gp_k$\;
+  $\alpha$ := $\frac{r_k^Tr_k}{p_k^Tc}$\;
+  $x_{k+1}$ := $x_k + \alpha p_k$\;
+  $r_{k+1}$ := $r_k - \alpha c$\;
+  $\beta$ := $\frac{r_{k+1}^Tr_{k+1}}{r_k^Tr_k}$\;
+  $p_{k+1}$ := $r_{k+1} + \beta p_k$\;
+  $k$ := $k+1$;
+ }
+\end{algorithm}
+\end{document}
